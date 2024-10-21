@@ -23,31 +23,56 @@
             <p>
                 Please display a hello world message in JavaScript. 
                 <script>
-                    document.title = "JavaScript Basic -- In class practice -- Yilian Zhang";
+                    document.title = "JavaScript Basic -- In class practice -- Dylan Hagy";
                     // use document.write to display a message
-                    
+                    document.write("<p>Hi, Great. I am here</p>");
                     // use console.log to display a message   
-                  
+                    console.log("This is for debugging");
                     
                 </script>
             </p>
-            <p> Please import external file hello.js here. 
-                
+            <p> Please import external file hello.js here.
+                <script src="js/hello.js"></script>    
             </p>
         </div>
 
         <div class="practice">
             <h1> Variable and Arithemetic Operation</h1>
             <p> Practice on variables </p>
+            <script>
+                var a = parseInt("10");
+                var b = 3;
+                var c = a + b;
+                var d = a - b;
+                var e = a * b;
+                var f = a / b;
+                var g = a % b;
 
+                document.write("<p> a + b = " + c + "</p>");
+                document.write("<p> a - b = " + d + "</p>");
+                document.write("<p> a * b = " + e + "</p>");
+                document.write("<p> a / b = " + f + "</p>");
+                document.write("<p> a % b = " + g + "</p>");
+                
+            </script>
 
         </div>
 
         <div class="practice">
             <h1> JavaScript Escape Sequence</h1>
+            
             <p> Write an image to the page </p>
+                <script>
+                    document.write("<img src=\"img/die1.png\">");
+                </script>
 
             <p> Write a table to the page </p>
+                <script>
+                    document.write("<table border=\"1\">");
+                    document.write("<tr><td>1</td><td>2</td><td>3</td></tr>");
+                    document.write("<tr><td>4</td><td>5</td><td>6</td></tr>");
+                    document.write("</table>");
+                </script>
 
         </div>
 
