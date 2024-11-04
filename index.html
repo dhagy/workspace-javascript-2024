@@ -257,8 +257,8 @@
                 function convertHTML() {
                     const codeE = document.getElementById('code');
                     const htmlcodeE = document.getElementById('htmlcode');
-
-                    htmlcodeE.innerHTML = codeE.textContent;
+                    console.log(codeE.value);
+                    htmlcodeE.innerHTML = codeE.value;
                 }
 
                 document.getElementById('tryit').addEventListener('click', convertHTML);
@@ -286,8 +286,35 @@
             </p>
 
             <script type="text/javascript">
+                // event handlers
+                function getprice() {
+                    // get elements
+                    var year = document.getElementById('year');
+                    var condition = document.getElementById('condition');
 
+                    console.log(year.value);
+                    console.log(year.selectedIndex);
 
+                    if (year.value == "2003" && condition.value == "Fair") {
+                        price = 2000;
+                    }
+                    else if (year.value == "2003" && condition.value == "Good") {
+                        price = 3000;
+                    }
+                    else if (year.value == "2004" && condition.value == "Fair") {
+                        price = 2200;
+                    }
+                    else if (year.value == "2004" && condition.value == "Good") {
+                        price = 4000;
+                    }
+
+                    // finish the if statement
+                    document.getElementById('price').innerHTML = "The price is <b> " + price + "</b>";
+                }
+
+                // add event listener
+                year.addEventListener('change', getprice, false);
+                condition.addEventListener('change', getprice, false);
 
             </script>
 
@@ -295,9 +322,39 @@
 
         <div class="practice">
             <h1> Decision Statement - Switch</h1>
-            <p> Choose your favorite theme(warm, cool, hot)
+            <p> Choose your favorite theme(warm, warmish, cool, hot)
                 <input type="text" id="theme">
             </p>
+
+            <script>
+                //get element
+                var theme = document.getElementById('theme');
+                theme.addEventListener('blur', gettheme, false);
+
+                // action
+                function gettheme() {
+                    var themeValue = document.getElementById('theme').value;
+
+                    switch (themeValue) {
+                        case "warm":
+                            document.body.style.backgroundColor = "yellow";
+                            break;
+                        case "warmish":
+                            document.body.style.backgroundColor = "orange";
+                            break;
+                        case "hot":
+                            document.body.style.backgroundColor = "red";
+                            break;
+                        case "cool":
+                            document.body.style.backgroundColor = "blue";
+                            break;
+                        default:
+                            alert("Please enter a valid theme");
+                    }
+                    
+                }
+
+            </script>
 
         </div>
 
